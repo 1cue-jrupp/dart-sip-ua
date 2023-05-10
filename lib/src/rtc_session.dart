@@ -163,6 +163,10 @@ class RTCSession extends EventManager implements Owner {
 
   RTCPeerConnection? get connection => _connection;
 
+  // Expose private to and from tags to make them usable for attended refer transfer of calls
+  String? get toTag => _to_tag;
+  String? get fromTag => _from_tag;
+
   @override
   int get TerminatedCode => C.STATUS_TERMINATED;
 
