@@ -548,8 +548,8 @@ class IncomingRequest extends IncomingMessage {
     if (code < 100 || code > 699) {
       throw Exceptions.TypeError('Invalid status_code: $code');
     } else if (reason != null) {
-      debugPrint("DOOF: " + code);
-      debugPrint("DOOF: " + reason);
+      debugPrint("DOOF: " + code.toString());
+      debugPrint("DOOF: " + reason.toString());
       throw Exceptions.TypeError('Invalid reason_phrase: $reason');
     }
 
