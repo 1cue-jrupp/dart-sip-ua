@@ -3,6 +3,7 @@ import 'dart:convert' show utf8;
 import 'package:sdp_transform/sdp_transform.dart' as sdp_transform;
 
 import 'package:sip_ua/src/transactions/transaction_base.dart';
+import 'package:flutter/widgets.dart';
 import 'constants.dart' as DartSIP_C;
 import 'constants.dart';
 import 'data.dart';
@@ -547,6 +548,8 @@ class IncomingRequest extends IncomingMessage {
     if (code < 100 || code > 699) {
       throw Exceptions.TypeError('Invalid status_code: $code');
     } else if (reason != null) {
+      debugPrint("DOOF: " + code);
+      debugPrint("DOOF: " + reason);
       throw Exceptions.TypeError('Invalid reason_phrase: $reason');
     }
 
