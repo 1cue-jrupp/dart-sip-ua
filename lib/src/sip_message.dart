@@ -548,9 +548,7 @@ class IncomingRequest extends IncomingMessage {
     if (code < 100 || code > 699) {
       throw Exceptions.TypeError('Invalid status_code: $code');
     } else if (reason != null) {
-      debugPrint("DOOF: " + code.toString());
-      debugPrint("DOOF: " + reason.toString());
-      throw Exceptions.TypeError('Invalid reason_phrase: $reason');
+      reason = null;
     }
 
     reason = reason ?? DartSIP_C.REASON_PHRASE[code] ?? '';
